@@ -29,3 +29,11 @@ Then we add cube to the scene and we render the scene with the camera
 We delete the main function declaration since we do not need it and just run the script...
 Now we animate the cube with rotation and requestAnimationFrame
 We now added light and changed material to see 3D clearer
+Now we add 2 more cube with makeInstance function and we rotate them as well plus refactoring
+
+### Step 5 - Responsive Design https://threejs.org/manual/#en/responsive
+
+Changing css in index.html file
+Fixing so that the resolution is perfect with client window size
+Adding resizeDisplaySize function in order to set the canvas resolution
+Refactoring with HD-DPI display in focus

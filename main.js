@@ -17,7 +17,6 @@ const boxWidth = 1;
 const boxHeight = 1;
 const boxDepth = 1;
 const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
-const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
 
 const cubes = [
   makeInstance(geometry, 0x44aa88, 0),
@@ -35,6 +34,12 @@ renderer.render(scene, camera);
 
 function render(time) {
   time *= 0.001; // convert time to seconds
+
+  if (resizeRendererToDisplaySize(renderer)) {
+    const canvas = renderer.domElement;
+    camera.aspect = canvas.clientWidth / canvas.clientHeight;
+    camera.updateProjectionMatrix();
+  }
 
   cubes.forEach((cube, ndx) => {
     const speed = 1 + ndx * 0.1;
@@ -58,6 +63,18 @@ function makeInstance(geometry, color, x) {
   cube.position.x = x;
 
   return cube;
+}
+
+function resizeRendererToDisplaySize(renderer) {
+  const canvas = renderer.domElement;
+  const pixelRatio = window.devicePixelRatio;
+  const width = (canvas.clientWidth * pixelRatio) | 0;
+  const height = (canvas.clientHeight * pixelRatio) | 0;
+  const needResize = canvas.width !== width || canvas.height !== height;
+  if (needResize) {
+    renderer.setSize(width, height, false);
+  }
+  return needResize;
 }
 
 // ROTATING GREEN CUBE EXAMPLE
