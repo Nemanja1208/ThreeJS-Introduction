@@ -1,14 +1,16 @@
 import * as THREE from "three";
+import { GUI } from "three/addons/libs/lil-gui.module.min.js";
 
 const canvas = document.querySelector("#c");
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
+const gui = new GUI();
 
 const fov = 40;
 const aspect = 2; // the canvas default
 const near = 0.1;
 const far = 1000;
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.set(0, 150, 0);
+camera.position.set(0, 50, 0);
 camera.up.set(0, 0, 1);
 camera.lookAt(0, 0, 0);
 
@@ -68,12 +70,48 @@ moonMesh.scale.set(0.5, 0.5, 0.5);
 moonOrbit.add(moonMesh);
 objects.push(moonMesh);
 
-objects.forEach((node) => {
-  const axes = new THREE.AxesHelper();
-  axes.material.depthTest = false;
-  axes.renderOrder = 1;
-  node.add(axes);
-});
+// Turns both axes and grid visible on/off
+// GUI requires a property that returns a bool
+// to decide to make a checkbox so we make a setter
+// can getter for `visible` which we can tell GUI
+// to look at.
+class AxisGridHelper {
+  constructor(node, units = 10) {
+    const axes = new THREE.AxesHelper();
+    axes.material.depthTest = false;
+    axes.renderOrder = 2; // after the grid
+    node.add(axes);
+
+    const grid = new THREE.GridHelper(units, units);
+    grid.material.depthTest = false;
+    grid.renderOrder = 1;
+    node.add(grid);
+
+    this.grid = grid;
+    this.axes = axes;
+    this.visible = false;
+  }
+  get visible() {
+    return this._visible;
+  }
+  set visible(v) {
+    this._visible = v;
+    this.grid.visible = v;
+    this.axes.visible = v;
+  }
+}
+
+function makeAxisGrid(node, label, units) {
+  const helper = new AxisGridHelper(node, units);
+  gui.add(helper, "visible").name(label);
+}
+
+makeAxisGrid(solarSystem, "solarSystem", 26);
+makeAxisGrid(sunMesh, "sunMesh");
+makeAxisGrid(earthOrbit, "earthOrbit");
+makeAxisGrid(earthMesh, "earthMesh");
+makeAxisGrid(moonOrbit, "moonOrbit");
+makeAxisGrid(moonMesh, "moonMesh");
 
 function resizeRendererToDisplaySize(renderer) {
   const canvas = renderer.domElement;

@@ -65,4 +65,6 @@ Setting camera settings and rotation of objects and adding both to the scene...
 But now instead of adding Earthmesh to scene we add it to Sunmesh instead
 Now adding SolarSystem object
 Adding Moon, plus adding Earth and Moon Orbit
-Adding Axes helpers to see well... axes
+Adding Axes helpers to see well... axes, mentioning lil-gui
+Now that we see that we want to make a grid with both GridHelper and AxisHelper
+Added controls to display these settings added CSS a little bit
