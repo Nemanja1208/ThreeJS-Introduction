@@ -60,11 +60,17 @@ Added Font 3D with FontLoader
 
 ### Step 7 Scenegraph
 
-Creating Sun,Earth and Moon scene...
-Setting camera settings and rotation of objects and adding both to the scene...
-But now instead of adding Earthmesh to scene we add it to Sunmesh instead
-Now adding SolarSystem object
-Adding Moon, plus adding Earth and Moon Orbit
-Adding Axes helpers to see well... axes, mentioning lil-gui
-Now that we see that we want to make a grid with both GridHelper and AxisHelper
-Added controls to display these settings added CSS a little bit
+1. Creating Sun,Earth and Moon scene...
+   Setting camera settings and rotation of objects and adding both to the scene...
+   But now instead of adding Earthmesh to scene we add it to Sunmesh instead
+   Now adding SolarSystem object
+   Adding Moon, plus adding Earth and Moon Orbit
+   Adding Axes helpers to see well... axes, mentioning lil-gui
+   Now that we see that we want to make a grid with both GridHelper and AxisHelper
+   Added controls to display these settings added CSS a little bit
+
+2. Bulding a tank scene where it follows and aims at a sphere
+   First we create a targetOrbit with rotation and position as well as a elevation and moving up and down...
+   Then we create a tank with SplineCurve and positions as well as the turret and its camera
+   We have 4 different types of cameras here detached,on turret, near target and above the tank...
+   We cycle through them
