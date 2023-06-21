@@ -56,3 +56,4 @@ Changing scene background, settings and creating a addObject function that we us
 Creating a random color material function
 Creating a function addSolidGeometry there we pass geometry as a parameter and create a random colored material and add to scene
 Copied code from documentation to have all elements...
+Added Font 3D with FontLoader
