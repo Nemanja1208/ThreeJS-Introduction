@@ -1,1 +1,1 @@
-Introduction project to Three.js through official documentation
+Introduction projects to Three.js through official documentation
