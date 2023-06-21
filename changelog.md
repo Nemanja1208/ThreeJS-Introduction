@@ -57,3 +57,9 @@ Creating a random color material function
 Creating a function addSolidGeometry there we pass geometry as a parameter and create a random colored material and add to scene
 Copied code from documentation to have all elements...
 Added Font 3D with FontLoader
+
+### Step 7 Scenegraph
+
+Creating Sun,Earth and Moon scene...
+Setting camera settings and rotation of objects and adding both to the scene...
+But now instead of adding Earthmesh to scene we add it to Sunmesh instead
