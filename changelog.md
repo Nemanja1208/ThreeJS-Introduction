@@ -60,6 +60,8 @@ Added Font 3D with FontLoader
 
 ### Step 7 Scenegraph
 
+### https://threejs.org/manual/#en/scenegraph
+
 1. Creating Sun,Earth and Moon scene...
    Setting camera settings and rotation of objects and adding both to the scene...
    But now instead of adding Earthmesh to scene we add it to Sunmesh instead
@@ -74,3 +76,16 @@ Added Font 3D with FontLoader
    Then we create a tank with SplineCurve and positions as well as the turret and its camera
    We have 4 different types of cameras here detached,on turret, near target and above the tank...
    We cycle through them
+
+### Step 8 Materials
+
+### https://threejs.org/manual/#en/materials
+
+Looking at the different types of materials...
+
+ToDo:
+Step 9 - Textures
+Step 10 - Lights
+Step 11 - Shadows and Fog
+Step 12 - Render Targets
+Step 13 - Custom Buffergeometry
