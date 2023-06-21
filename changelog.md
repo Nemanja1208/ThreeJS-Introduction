@@ -51,3 +51,5 @@ Refactoring with HD-DPI display in focus
 ### Step 6 - Looking at PRIMITIVES
 
 ### https://threejs.org/manual/#en/primitives
+
+Changing scene background, settings and creating a addObject function that we use to populate scene

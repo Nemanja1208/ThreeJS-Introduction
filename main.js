@@ -3,15 +3,16 @@ import * as THREE from "three";
 const canvas = document.querySelector("#c");
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
 
-const fov = 75; // Field of view
+const fov = 40; // Field of view
 const aspect = 2; // the canvas default
 const near = 0.1; // anything before will not be rendered
-const far = 5; // anything after will not be rendered
+const far = 1000; // anything after will not be rendered
 
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.z = 2;
+camera.position.z = 120;
 
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xaaaaaa);
 
 const boxWidth = 1;
 const boxHeight = 1;
@@ -76,6 +77,37 @@ function resizeRendererToDisplaySize(renderer) {
   }
   return needResize;
 }
+
+const objects = [];
+const spread = 15;
+
+function addSolidGeometry(x, y, geometry) {
+  const mesh = new THREE.Mesh(geometry, createMaterial());
+  addObject(x, y, mesh);
+}
+
+function createMaterial() {
+  const material = new THREE.MeshPhongMaterial({
+    side: THREE.DoubleSide,
+  });
+
+  const hue = Math.random();
+  const saturation = 1;
+  const luminance = 0.5;
+  material.color.setHSL(hue, saturation, luminance);
+
+  return material;
+}
+
+function addObject(x, y, obj) {
+  obj.position.x = x * spread;
+  obj.position.y = y * spread;
+
+  scene.add(obj);
+  objects.push(obj);
+}
+
+// Now you can proceed with using the functions and variables defined above.
 
 // ROTATING GREEN CUBE EXAMPLE
 // const scene = new THREE.Scene();
