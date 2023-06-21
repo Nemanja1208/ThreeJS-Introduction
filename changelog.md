@@ -1,6 +1,8 @@
 Documentation
 
-### Step 1 https://threejs.org/docs/index.html#manual/en/introduction/Installation
+### Step 1
+
+### https://threejs.org/docs/index.html#manual/en/introduction/Installation
 
 Created index.html and main.js
 Install three.js and vite with npm install --save three npm install --save-dev vite and npx vite
@@ -9,17 +11,23 @@ Install three.js and vite with npm install --save three npm install --save-dev v
 
 Run npx vite build - will create dist/ folder...
 
-### Step 2 - Create a scene with green rotating cube https://threejs.org/docs/#manual/en/introduction/Creating-a-scene
+### Step 2 - Create a scene with green rotating cube
+
+### https://threejs.org/docs/#manual/en/introduction/Creating-a-scene
 
 We are setting up Camera, Scene and Renderer...
 We are adding cude to the mix
 We are rendering the scene and animating the cube
 
-### Step 3 - Creating 2 blue lines connecting making an upwords arrow https://threejs.org/docs/#manual/en/introduction/Drawing-lines
+### Step 3 - Creating 2 blue lines connecting making an upwords arrow
+
+### https://threejs.org/docs/#manual/en/introduction/Drawing-lines
 
 We are adding lines and coordinates
 
-### Step 4 - FUNDAMENTALS https://threejs.org/manual/#en/fundamentals
+### Step 4 - FUNDAMENTALS
+
+### https://threejs.org/manual/#en/fundamentals
 
 Adding a canvas in index.html and editing index.js with main function where we define renderer
 Then we add parameters and camera into the main function
@@ -31,9 +39,15 @@ Now we animate the cube with rotation and requestAnimationFrame
 We now added light and changed material to see 3D clearer
 Now we add 2 more cube with makeInstance function and we rotate them as well plus refactoring
 
-### Step 5 - Responsive Design https://threejs.org/manual/#en/responsive
+### Step 5 - Responsive Design
+
+### https://threejs.org/manual/#en/responsive
 
 Changing css in index.html file
 Fixing so that the resolution is perfect with client window size
 Adding resizeDisplaySize function in order to set the canvas resolution
 Refactoring with HD-DPI display in focus
+
+### Step 6 - Looking at PRIMITIVES
+
+### https://threejs.org/manual/#en/primitives
