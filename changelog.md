@@ -53,3 +53,6 @@ Refactoring with HD-DPI display in focus
 ### https://threejs.org/manual/#en/primitives
 
 Changing scene background, settings and creating a addObject function that we use to populate scene
+Creating a random color material function
+Creating a function addSolidGeometry there we pass geometry as a parameter and create a random colored material and add to scene
+Copied code from documentation to have all elements...
