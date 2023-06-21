@@ -42,14 +42,38 @@ sunMesh.scale.set(5, 5, 5);
 solarSystem.add(sunMesh);
 objects.push(sunMesh);
 
+const earthOrbit = new THREE.Object3D();
+earthOrbit.position.x = 10;
+solarSystem.add(earthOrbit);
+objects.push(earthOrbit);
+
 const earthMaterial = new THREE.MeshPhongMaterial({
   color: 0x2233ff,
   emissive: 0x112244,
 });
 const earthMesh = new THREE.Mesh(sphereGeometry, earthMaterial);
-earthMesh.position.x = 10;
-solarSystem.add(earthMesh);
+earthOrbit.add(earthMesh);
 objects.push(earthMesh);
+
+const moonOrbit = new THREE.Object3D();
+moonOrbit.position.x = 2;
+earthOrbit.add(moonOrbit);
+
+const moonMaterial = new THREE.MeshPhongMaterial({
+  color: 0x888888,
+  emissive: 0x222222,
+});
+const moonMesh = new THREE.Mesh(sphereGeometry, moonMaterial);
+moonMesh.scale.set(0.5, 0.5, 0.5);
+moonOrbit.add(moonMesh);
+objects.push(moonMesh);
+
+objects.forEach((node) => {
+  const axes = new THREE.AxesHelper();
+  axes.material.depthTest = false;
+  axes.renderOrder = 1;
+  node.add(axes);
+});
 
 function resizeRendererToDisplaySize(renderer) {
   const canvas = renderer.domElement;
